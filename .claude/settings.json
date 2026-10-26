@@ -1,0 +1,139 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/require-scope-declared.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/require-checklist.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/require-meeting-specs.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/require-references-read.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/require-answers.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/require-business-logic-extracted.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/require-scope-complete.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/require-solutions-reviewed.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/require-schema-designed.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/require-decision-inventory.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/require-architecture-decisions.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/require-display-data-trace.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/require-implementation-approved.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/log-file-read.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/check-prompt-clean.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/check-solutions-contradiction.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/check-reference-traced.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/check-researcher-output.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/check-research-problems.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/check-limitation-workaround.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/check-workaround-addressed.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/check-aqc-decision-match.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/check-confidence-aqc-consistency.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/require-questions-asked.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "defaultMode": "bypassPermissions",
+    "allow": ["*"],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(git push:*)",
+      "Read(.env*)"
+    ]
+  }
+}

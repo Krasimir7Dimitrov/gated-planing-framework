@@ -1,0 +1,20 @@
+{
+  "projects": {
+    "primary": {
+      "root": ".",
+      "srcDirs": ["src"]
+    },
+    "secondary": {
+      "root": "../secondary-app",
+      "srcDirs": ["src"]
+    }
+  },
+  "bundleDirs": [],
+  "referenceProjects": [
+    { "name": "reference-app", "path": "../reference-app" }
+  ],
+  "businessLogicPath": "docs/BUSINESS_LOGIC.md",
+  "lessonsPath": "docs/lessons_learned.md",
+  "telemetryPath": ".claude/metrics/mcp-queries.jsonl",
+  "rgPath": "rg"
+}

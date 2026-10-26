@@ -1,0 +1,169 @@
+{
+  "metadata": {
+    "presenter": "Tech lead",
+    "participant": "Developer",
+    "meeting_type": "Daily sync",
+    "industry": "E-commerce (online retail)",
+    "systems_shown": [
+      "Back Office (software for managing orders, stores and customer groups)",
+      "reference-app / Demo Lamp (detailed product dashboard)"
+    ],
+    "main_topic": "Implementing Audit History (change history) functionality in the Back Office"
+  },
+  "timeline": [
+    {
+      "timestamp": "00:36 - 00:51",
+      "screen": "Back Office (Orders list)",
+      "actions": [
+        {
+          "step": 1,
+          "action": "switch_tab",
+          "element": "Back Office tab",
+          "result": "the main interface with a sidebar and a table loads",
+          "context": "The tech lead switches to the Back Office tab. A left sidebar with navigation (Shops, Customer Groups, Orders) is visible, a top bar with multiple filter dropdowns, and a main work area filled by a large table of order data."
+        }
+      ],
+      "current_state": "Viewing orders, statuses and stores"
+    },
+    {
+      "timestamp": "00:52 - 01:45",
+      "screen": "reference-app (Demo Lamp)",
+      "actions": [
+        {
+          "step": 1,
+          "action": "switch_tab",
+          "element": "Demo Lamp tab",
+          "result": "a detailed product dashboard is shown",
+          "context": "Switch to the 'Demo Lamp' tab. The screen is a detailed dashboard with information panels (Description, Dimensions, Pricing, Stock, etc.)."
+        },
+        {
+          "step": 2,
+          "action": "click",
+          "element": "Product history button",
+          "result": "a modal window with a list of log entries opens",
+          "context": "In the top right corner of the screen, just above the 'Pricing' panel, the tech lead clicks a small button with a clock icon ('Product history')."
+        },
+        {
+          "step": 3,
+          "action": "select_text",
+          "element": "log entry text",
+          "result": "demonstration of the human-readable format",
+          "context": "A window with the change history opens. The rows contain a date, a user and text. The tech lead highlights specific texts with the mouse to explain how the log entries should look in plain language."
+        }
+      ],
+      "current_state": "Modal window with the change history is open"
+    },
+    {
+      "timestamp": "01:46 - 02:45",
+      "screen": "Back Office (Order details)",
+      "actions": [
+        {
+          "step": 1,
+          "action": "switch_tab",
+          "element": "Back Office tab",
+          "result": "back to the orders list",
+          "context": "Back to the first tab with the orders list."
+        },
+        {
+          "step": 2,
+          "action": "click",
+          "element": "Row in the orders table",
+          "result": "a side panel (Sidebar) with details slides in",
+          "context": "Clicking a specific row in the large table. A side panel opens on the right, showing order details (Order, Status, Type, Date, User)."
+        },
+        {
+          "step": 3,
+          "action": "click",
+          "element": "Edit Item button",
+          "result": "a context menu/window for editing opens",
+          "context": "Clicking the blue 'Edit Item' button in the side panel, which opens a small update window."
+        },
+        {
+          "step": 4,
+          "action": "click",
+          "element": "Cancel button",
+          "result": "the status changes",
+          "context": "Demonstration of a change: the 'Cancel' button is clicked to change the status of the order item."
+        },
+        {
+          "step": 5,
+          "action": "click",
+          "element": "Restore button",
+          "result": "the status returns to its initial state (Pending)",
+          "context": "Immediately after that the 'Restore' button is clicked to return the order item to status 'Pending'."
+        }
+      ],
+      "current_state": "The order details side panel is open"
+    },
+    {
+      "timestamp": "02:46 - 03:29",
+      "screen": "Back Office (Customer Groups)",
+      "actions": [
+        {
+          "step": 1,
+          "action": "click",
+          "element": "+ (Add) button next to Customer Groups in the sidebar",
+          "result": "the Create Customer Group modal window opens",
+          "context": "Clicking the plus icon next to 'Customer Groups' in the left sidebar. A centered modal window 'Create Customer Group' opens with fields for name and members."
+        },
+        {
+          "step": 2,
+          "action": "hover",
+          "element": "Order Type checkboxes (Retail, Wholesale, Retail & Wholesale)",
+          "result": "demonstration of the options that must be logged when changed",
+          "context": "Moving the cursor over the checkboxes at the bottom of the window ('Order Type') to illustrate that changing them must create a log entry."
+        }
+      ],
+      "current_state": "The Create Customer Group modal window is open"
+    },
+    {
+      "timestamp": "03:30 - 03:50",
+      "screen": "Back Office (Shops/Stores)",
+      "actions": [
+        {
+          "step": 1,
+          "action": "click",
+          "element": "Add button next to Shops in the sidebar",
+          "result": "the Create Shop modal window opens",
+          "context": "Clicking the 'Add' button in the top section of the left sidebar ('Shops'). A small 'Create Shop' window opens with one text field and Cancel and Save buttons."
+        }
+      ],
+      "current_state": "The Create Shop modal window is open, waiting for a name"
+    },
+    {
+      "timestamp": "03:51 - 05:20",
+      "screen": "Back Office (Orders list)",
+      "actions": [
+        {
+          "step": 1,
+          "action": "hover",
+          "element": "orders table",
+          "result": "static screen, explanation of the backend logic (Doctrine, transactions)",
+          "context": "The screen stays static on the orders table. The modal windows are closed. The tech lead moves the cursor slightly without clicking while explaining the backend logic and Doctrine."
+        }
+      ],
+      "current_state": "Static view of the orders table"
+    },
+    {
+      "timestamp": "05:21 - 06:10",
+      "screen": "reference-app (Product history)",
+      "actions": [
+        {
+          "step": 1,
+          "action": "switch_tab",
+          "element": "Demo Lamp tab",
+          "result": "back to the modal window with the log entries",
+          "context": "Switching back to the 'reference-app' tab, where the window with the product history is still open."
+        },
+        {
+          "step": 2,
+          "action": "hover",
+          "element": "Extend all text/button",
+          "result": "demonstration of where to place the new UI button",
+          "context": "The cursor is placed over the 'Extend all' text/button in the top right corner of the log table. The goal is to show visually where the new button must be built in the frontend."
+        }
+      ],
+      "current_state": "Visualization of the desired final UI design"
+    }
+  ]
+}
